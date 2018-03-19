@@ -1,0 +1,49 @@
+# Must end with '/'
+baseURL = "http://jjkcryptoassets.com/"
+
+languageCode = "en-us"
+title = "JJK Crypto Assets"
+paginate = 2
+
+[params]
+    debug = true
+
+    date_format = "January 2, 2006"
+    time_format = "15:04"
+
+    author = "JJK Crypto Assets"
+    description = "Diversified and actively managed portfolio of digital assets"
+
+    copyright_year = 2018
+
+[[menu.main]]
+    name = "Blog"
+    url = "/blog"
+    weight = 1
+
+[[menu.main]]
+    name = "Portfolio"
+    url = "/portfolio"
+    weight = 2
+
+[[menu.main]]
+    name = "FAQ"
+    url = "/faq"
+    weight = 3
+
+[[menu.main]]
+    name = "Contact"
+    url = "/contact"
+    weight = 4
+
+[outputs]
+    home = [ "HTML", "CSS", "RSS" ]
+    section = [ "HTML", "RSS" ]
+
+[outputFormats.CSS]
+    # Change default generated css file to style.css
+    baseName = "style"
+
+[taxonomies]
+    category = "categories"
+    tag = "tags"

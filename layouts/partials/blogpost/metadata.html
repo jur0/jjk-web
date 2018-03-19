@@ -1,0 +1,44 @@
+{{ $blogpost := .blogpost }}
+{{ $params := $blogpost.Params }}
+{{ $site_params := $blogpost.Site.Params }}
+
+<span class="blogpost-date">
+  <!-- Last modified TODO
+  {{ if ne $params.Lastmod $params.Date }}
+  Last updated
+  {{ end }}
+  -->
+  <time datetime="{{ $blogpost.Date }}" itemprop="datePublished dateModified">
+    {{ $blogpost.Lastmod.Format $site_params.date_format }}
+  </time>
+</span>
+<span itemscope itemprop="author publisher" itemtype="http://schema.org/Person">
+  <meta itemprop="name" content="{{ $site_params.author }}">
+</span>
+{{ if ne $site_params.reading_time false }}
+<span>&middot;</span>
+<span class="blogpost-reading-time">
+  {{ $blogpost.ReadingTime }} minute read
+</span>
+{{ end }}
+
+{{ $comments_enabled := and .Site.DisqusShortname (not (or $site_params.disable_comments $blogpost.Params.disable_comments)) }}
+{{ if and $comments_enabled ($site_params.comment_count | default true) }}
+<span>&middot;</span>
+<a href="{{ $blogpost.Permalink }}#disqus_thread"><!-- Count will be inserted here --></a>
+{{ end}}
+
+{{ if isset $params "categories" }}
+{{ $categories_len := len $params.categories }}
+{{ if gt $categories_len 0 }}
+<span>&middot;</span>
+<span class="blogpost-categories">
+  <!-- TODO -->
+  <i class="fa fa-folder"></i>
+  {{ range $k, $v := $params.categories }}
+  <a href="{{ "/categories/" | relURL }}{{ . | urlize | lower }}">{{ . }}</a
+  >{{ if lt $k (sub $categories_len 1) }}, {{ end }}
+  {{ end }}
+</span>
+{{ end }}
+{{ end }}

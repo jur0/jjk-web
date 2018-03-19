@@ -1,0 +1,7 @@
+{{- $scr := .Scratch -}}
+{{- $scr.Set "site" $.Site -}}
+
+{{- $scr.Set "css" (partial "css/theme.css" $scr) -}}
+
+{{/* Return parsed CSS. */}}
+{{- $scr.Get "css" -}}

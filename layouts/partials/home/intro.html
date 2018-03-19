@@ -1,0 +1,17 @@
+<section id="home-intro">
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xs-12 col-md-8">
+          <h1 class="text-left display-4">{{ .Title }}</h1>
+          <p class="text-left">{{ .Content | markdownify }}</p>
+          {{ if and .Params.button.url .Params.button.label }}
+          <p>
+            <a class="btn btn-lg btn-outline btn-light" href="{{ .Params.button.url }}">{{ .Params.button.label | safeHTML }}</a>
+          </p>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

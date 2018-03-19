@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en-us" }}">
+  <head>
+  {{ partial "common/head.html" . }}
+  </head>
+  <body>
+  {{ partial "common/navbar.html" . }}
+    <main>
+      {{ block "main" . }}{{ end }}
+    </main>
+    <footer>
+      {{ partial "common/footer.html" . }}
+    </footer>
+    {{ if .Site.Params.debug }}
+      {{ block "template" . }}{{ end }}
+    {{ end }}
+    {{ partial "common/footer-js.html" . }}
+  </body>
+</html>

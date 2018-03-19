@@ -1,0 +1,33 @@
+{{ $blogpost := .blogpost }}
+{{ $header := $blogpost.Params.header }}
+{{ $preview := $header.preview | default true }}
+
+<div class="card border-0 mb-3" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
+  <!--
+  {{ if and $header.image $preview }}
+  <a href="{{ $blogpost.Permalink }}">
+    <img src="{{ "/img/" | relURL }}{{ $header.image }}" class="article-banner" itemprop="image">
+  </a>
+  {{end}}
+  -->
+  <div class="card-body">
+    <h2 class="card-title text-center" itemprop="headline">
+      <a class="text-dark" href="{{ $blogpost.Permalink }}" itemprop="url">{{ $blogpost.Title }}</a>
+    </h2>
+    <p class="text-center">
+      {{ partial "blogpost/metadata.html" (dict "blogpost" $blogpost) }}
+    </p>
+    <p class="card-text" itemprop="articleBody">
+    {{ if $blogpost.Params.summary }}
+      {{ printf "%s" $blogpost.Params.summary | markdownify }}
+    {{ else if $blogpost.Truncated }}
+      {{ $blogpost.Summary }}
+    {{ else }}
+      {{ $blogpost.Content }}
+    {{ end }}
+    </p>
+    <p class="text-center">
+      <a class="card-link btn btn-light btn-outline" href="{{ $blogpost.Permalink }}" itemprop="mainEntityOfPage">Read more</a>
+    </p>
+  </div>
+</div>

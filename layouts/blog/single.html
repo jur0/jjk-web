@@ -1,0 +1,44 @@
+{{ define "template" }}
+	{{ $context := dict "Which" .Kind "Template" "layouts/blog/single.html" }}
+  {{ partial "show-template" $context }}
+{{ end }}
+
+{{ define "main" }}
+<article id="blogpost" itemscope itemtype="http://schema.org/Article">
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xs-12 col-md-8">
+          <h1 class="text-center" itemprop="name">{{ .Title }}</h1>
+          <p class="text-center">
+            {{ partial "blogpost/metadata.html" (dict "blogpost" .) }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div itemprop="articleBody">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xs-12 col-md-8">
+          {{ .Content }}
+          {{ partial "blogpost/tags.html" . }}
+        </div>
+      </div>
+    </div>
+  </div>
+  {{ $related := .Site.RegularPages.Related . | first 5 }}
+  {{ with $related }}
+  <div class="article-widget">
+    <div class="hr-light"></div>
+    <h3>related</h3>
+    <ul>
+      {{ range . }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
+  {{ partial "blogpost/comments.html" . }}
+</article>
+{{ end }}

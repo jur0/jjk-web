@@ -1,0 +1,20 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="theme" content="jjk">
+{{ .Hugo.Generator }}
+{{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+{{ .Scratch.Set "description" .Site.Params.description }}
+{{ if .IsPage }}
+  {{ .Scratch.Set "description" .Summary }}
+{{ end }}
+<meta name="description" content="{{ .Scratch.Get "description" }}">
+<!-- TODO -->
+<title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+{{ $css := .Site.Data.sri.css }}
+{{ if not .Site.Params.disable_sri }}
+  {{ printf "<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/%s/css/bootstrap.min.css\" integrity=\"%s\" crossorigin=\"anonymous\">" $css.bootstrap.version $css.bootstrap.sri | safeHTML }}
+{{ else }}
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/{{- $css.bootstrap.version -}}/css/bootstrap.min.css">
+{{ end }}
+<link rel="stylesheet" href="{{ "style.css" | relURL }}">

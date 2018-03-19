@@ -1,0 +1,13 @@
+{{ define "template" }}
+  {{ $context := dict "Which" .Kind "Template" "layouts/index.html" }}
+  {{ partial "show-template.html" $context }}
+{{ end }}
+
+{{ define "main" }}
+  {{ $intro_context := .Site.GetPage "page" "home/intro.md" }}
+  {{ $description_context := .Site.GetPage "page" "home/description.md" }}
+  {{ $team_context := .Site.GetPage "page" "home/team.md" }}
+  {{ partial "home/intro.html" $intro_context }}
+  {{ partial "home/description.html" $description_context }}
+  {{ partial "home/team.html" $team_context }}
+{{ end }}

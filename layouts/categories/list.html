@@ -1,0 +1,17 @@
+{{ define "template" }}
+	{{ $context := dict "Which" .Kind "Template" "layouts/categories/list.html" }}
+  {{ partial "show-template" $context }}
+{{ end }}
+
+{{ define "main" }}
+<p> {{ .Site.LanguagePrefix }} </p>
+<ul>
+  {{ range $key, $value := .Data.Terms.Alphabetical }}
+  <li>
+    <a href="/{{ .Data.Plural }}/{{ $value.Name | urlize }}">{{ $value.Name }}</a>
+    {{ $value.Count }}
+  </li>
+  {{ end }}
+</ul>
+
+{{ end }}

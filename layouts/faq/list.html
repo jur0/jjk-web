@@ -1,0 +1,19 @@
+{{ define "template" }}
+	{{ $context := dict "Which" .Kind "Template" "layouts/faq/list.html" }}
+  {{ partial "show-template" $context }}
+{{ end }}
+
+{{ define "main" }}
+{{ $content := .Page.Content }}
+
+<section id="faq">
+  {{ partial "common/intro.html" . }}
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xs-12 col-md-8">
+        <p>{{ $content | markdownify }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

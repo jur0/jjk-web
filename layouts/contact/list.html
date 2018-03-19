@@ -1,0 +1,29 @@
+{{ define "template" }}
+	{{ $context := dict "Which" .Kind "Template" "layouts/contact/list.html" }}
+  {{ partial "show-template" $context }}
+{{ end }}
+
+{{ define "main" }}
+<section id="contact">
+  {{ partial "common/intro.html" . }}
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xs-12 col-md-8">
+        <form>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Name">
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" aria-describedby="email-help" placeholder="Email">
+            <small id="email-help" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Message">
+          </div>
+          <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,59 @@
+<div id="page-navigation" class="container-fluid sticky-top bg-light">
+  <div class="row justify-content-center">
+    <div class="col-xs-12 col-md-8">
+      <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <a class="navbar-brand" href="{{ "/" | relURL }}">
+          {{- if .Site.Params.logo -}}
+          <img src="{{ printf "/img/%s" .Site.Params.logo | relURL }}" alt="{{ .Site.Title }}">
+          {{- else -}}
+          {{- .Site.Title -}}
+          {{- end -}}
+        </a>
+        {{ if .Site.Menus.main }}
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        {{ end }}
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav ml-auto">
+            {{ range .Site.Menus.main }}
+              {{ if .HasChildren }}
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {{ .Pre }}
+                  <span>{{ .Name }}</span>
+                  {{ .Post }}
+                </a>
+                <div class="dropdown-menu">
+                  {{ range .Children }}
+                    <a class="dropdown-item" href="{{ .URL | relURL }}"{{ if $.IsHome }} data-target="{{ .URL }}"{{ end }}>
+                      {{ .Pre }}
+                      <span>{{ .Name }}</span>
+                      {{ .Post }}
+                    </a>
+                  {{ end }}
+                </div>
+              </li>
+              {{ else }}
+                {{/* Set target for link. */}}
+                {{ $.Scratch.Set "target" "" }}
+                {{ if gt (len .URL) 4 }}
+                  {{ if eq "http" (slicestr .URL 0 4) }}
+                    {{ $.Scratch.Set "target" " target=\"_blank\" rel=\"noopener\"" }}
+                  {{ end }}
+                {{ end }}
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ .URL | relURL }}"{{ if $.IsHome }} data-target="{{ .URL }}"{{ end }} {{ ($.Scratch.Get "target") | safeHTMLAttr }}>
+                    {{ .Pre }}
+                    <span>{{ .Name }}</span>
+                    {{ .Post }}
+                  </a>
+                </li>
+              {{ end }}
+            {{ end }}
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>

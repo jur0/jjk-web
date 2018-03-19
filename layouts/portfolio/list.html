@@ -1,0 +1,34 @@
+{{ define "template" }}
+	{{ $context := dict "Which" .Kind "Template" "layouts/portfolio/list.html" }}
+  {{ partial "show-template" $context }}
+{{ end }}
+
+{{ define "main" }}
+<section id="portfolio">
+  {{ partial "common/intro.html" . }}
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xs-12 col-md-6">
+        <table class="table table-hover">
+          <thead>
+            <tr class="row">
+              <th class="col-5 text-center">Asset</th>
+              <th class="col-3 text-center">Symbol</th>
+              <th class="col-4 text-center">Allocation (%)</th>
+            </tr>
+          </thead>
+          <tbody>
+          {{ range .Page.Params.assets }}
+            <tr class="row">
+              <td class="col-5">{{ .name }}</th>
+              <td class="col-3">{{ .symbol }}</td>
+              <td class="col-4 text-center">{{ .allocation }}</td>
+            </tr>
+          {{ end }}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
