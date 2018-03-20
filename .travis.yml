@@ -1,0 +1,25 @@
+dist: trusty
+sudo: required
+
+env:
+    global:
+        - HUGO_VERSION=0.37.1
+
+install:
+    - wget -O /tmp/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.deb
+    - sudo dpkg -i /tmp/hugo.deb
+
+script:
+    - hugo
+
+deploy:
+  provider: script
+  # Publish the directory `public`.
+  local_dir: public
+  skip_cleanup: true
+  # Use the github token stored in the travis environment
+  github_token: ${GITHUB_TOKEN}
+  repo: jur0/jur0.github.io
+  target_branch: master
+  on:
+    branch: master
