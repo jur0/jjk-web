@@ -8,8 +8,7 @@
 <ul>
   {{ range $key, $value := .Data.Terms.Alphabetical }}
   <li>
-    <a href="/{{ .Data.Plural }}/{{ $value.Name | urlize }}">{{ $value.Name }}</a>
-    {{ $value.Count }}
+    <p>{{ $value.Name }} - {{ $value.Count }}</p>
   </li>
   {{ end }}
 </ul>
