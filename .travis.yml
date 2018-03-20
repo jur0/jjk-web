@@ -13,13 +13,11 @@ script:
     - hugo
 
 deploy:
-  provider: script
-  # Publish the directory `public`.
-  local_dir: public
-  skip_cleanup: true
-  # Use the github token stored in the travis environment
-  github_token: ${GITHUB_TOKEN}
-  repo: jur0/jur0.github.io
-  target_branch: master
-  on:
-    branch: master
+    provider: pages
+    skip-cleanup: true
+    # Publish the directory `public`.
+    local-dir: public
+    # Use the github token stored in the travis environment
+    github_token: $GITHUB_TOKEN
+    on:
+        branch: travis
