@@ -1,5 +1,5 @@
 # Must end with '/'
-baseURL = "http://jjkcryptoassets.com/"
+baseURL = "https://jur0.github.io/jjk-web/"
 
 languageCode = "en-us"
 title = "JJK Crypto Assets"
