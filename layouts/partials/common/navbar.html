@@ -26,7 +26,7 @@
                 </a>
                 <div class="dropdown-menu">
                   {{ range .Children }}
-                    <a class="dropdown-item" href="{{ .URL | relURL }}"{{ if $.IsHome }} data-target="{{ .URL }}"{{ end }}>
+                    <a class="dropdown-item" href="{{ .URL }}"{{ if $.IsHome }} data-target="{{ .URL }}"{{ end }}>
                       {{ .Pre }}
                       <span>{{ .Name }}</span>
                       {{ .Post }}
@@ -43,7 +43,7 @@
                   {{ end }}
                 {{ end }}
                 <li class="nav-item">
-                  <a class="nav-link" href="{{ .URL | relURL }}"{{ if $.IsHome }} data-target="{{ .URL }}"{{ end }} {{ ($.Scratch.Get "target") | safeHTMLAttr }}>
+                  <a class="nav-link" href="{{ .URL }}"{{ if $.IsHome }} data-target="{{ .URL }}"{{ end }} {{ ($.Scratch.Get "target") | safeHTMLAttr }}>
                     {{ .Pre }}
                     <span>{{ .Name }}</span>
                     {{ .Post }}
