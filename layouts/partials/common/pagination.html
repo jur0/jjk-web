@@ -8,7 +8,7 @@
   <li class="nav-item">
     {{ if $has_prev }}
       {{ $prev := .Paginator.Prev }}
-      <a class="nav-link" href="{{ $prev.URL | relURL }}">prev</a>
+      <a class="nav-link" href="{{ $prev.URL }}">prev</a>
     {{ else }}
       <a class="nav-link disabled">prev</a>
     {{ end }}
@@ -20,7 +20,7 @@
   <li class="nav-item">
     {{ if $has_next }}
       {{ $next := .Paginator.Next }}
-      <a class="nav-link" href="{{ $next.URL | relURL }}">next</a>
+      <a class="nav-link" href="{{ $next.URL }}">next</a>
     {{ else }}
       <a class="nav-link disabled">next</a>
     {{ end }}
