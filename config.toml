@@ -5,6 +5,8 @@ languageCode = "en-us"
 title = "JJK Crypto Assets"
 paginate = 2
 
+preserveTaxonomyNames = true
+
 [params]
     debug = true
 
