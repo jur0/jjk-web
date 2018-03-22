@@ -28,16 +28,13 @@
 <a href="{{ $blogpost.Permalink }}#disqus_thread"><!-- Count will be inserted here --></a>
 {{ end}}
 
-{{ if isset $params "categories" }}
-{{ $categories_len := len $params.categories }}
-{{ if gt $categories_len 0 }}
+{{ if isset $params "tags" }}
+{{ $tags_len := len $params.tags }}
+{{ if gt $tags_len 0 }}
 <span>&middot;</span>
-<span class="blogpost-categories">
-  <!-- TODO -->
-  <i class="fa fa-folder"></i>
-  {{ range $k, $v := $params.categories }}
-  <a href="{{ "/categories/" | relURL }}{{ . | urlize | lower }}">{{ . }}</a
-  >{{ if lt $k (sub $categories_len 1) }}, {{ end }}
+<span class="blogpost-tags">
+  {{ range $k, $v := $params.tags }}
+  <a class="badge badge-light" href="{{ "/tags/" | relURL }}{{ . | urlize | lower }}">{{ . }}</a>
   {{ end }}
 </span>
 {{ end }}

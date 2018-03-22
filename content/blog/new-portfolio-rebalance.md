@@ -5,8 +5,8 @@ draft = false
 title = "New Portfolio Rebalance"
 
 # No tags: `tags = []`. Tags: `tags = ["A Tag", "Another Tag"]`.
-tags = ["portfolio", "rebalance"]
-categories = ["portfolio", "important post"]
+tags = ["tag1"]
+categories = ["cat1", "cat2"]
 
 [header]
 image = ""

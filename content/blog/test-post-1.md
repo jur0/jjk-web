@@ -1,8 +1,12 @@
----
-title: "Test Post 1"
-date: 2018-03-16T16:46:13+01:00
-draft: false
----
++++
+date = 2018-03-16T16:46:13+01:00
+draft = false
+
+title = "Test Post 1"
+
+tags = ["tag1", "tag3"]
+categories = ["cat3"]
++++
 
 Lorem ipsum dolor sit amet, id vix novum eripuit dolores. Eius autem dignissim has cu, ne tale error repudiare pro, te aliquam placerat sit. Paulo doctus animal an nam. Mutat quaestio ius ex, repudiare rationibus his ut, dicit impetus pro in.
 

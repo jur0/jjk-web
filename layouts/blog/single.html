@@ -17,26 +17,40 @@
       </div>
     </div>
   </div>
-  <div itemprop="articleBody">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-xs-12 col-md-8">
-          {{ .Content }}
-          {{ partial "blogpost/tags.html" . }}
-        </div>
+  <div class="container" itemprop="articleBody">
+    <div class="row justify-content-center">
+      <div class="col-xs-12 col-md-8">
+        {{ .Content }}
+        {{ partial "blogpost/tags.html" . }}
       </div>
     </div>
   </div>
-  {{ $related := .Site.RegularPages.Related . | first 5 }}
-  {{ with $related }}
-  <div class="article-widget">
-    <div class="hr-light"></div>
-    <h3>related</h3>
-    <ul>
-      {{ range . }}
-      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-      {{ end }}
-    </ul>
+  {{ $related := .Site.RegularPages.Related . | first 4 }}
+  {{ if gt (len $related) 0 }}
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xs-12 col-md-8">
+        <p>
+          <h2 class="text-center">Related</h2>
+        </p>
+        <div class="card-deck">
+        {{ range $related }}
+          <div class="card border-0">
+            <div class="card-body">
+              <h4 class="card-title text-center">
+                <a class="text-dark" href="{{ .RelPermalink }}">{{ .Title }}</a>
+              </h4>
+              <p class="card-subtitle text-center">
+                <time datetime="{{ .Date }}">
+                  <small>{{ .Lastmod.Format $.Site.Params.date_format }}</small>
+                </time>
+              </p>
+            </div>
+          </div>
+        {{ end }}
+        </div>
+      </div>
+    </div>
   </div>
   {{ end }}
   {{ partial "blogpost/comments.html" . }}

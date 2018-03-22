@@ -1,0 +1,36 @@
+{{ define "template" }}
+	{{ $context := dict "Which" .Kind "Template" "layouts/taxonomy/terms.html" }}
+  {{ partial "show-template" $context }}
+{{ end }}
+
+{{ define "main" }}
+<section id="category-list">
+  {{ partial "common/intro.html" . }}
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xs-12 col-md-8">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col" class="text-center">{{ .Data.Singular | title }}</th>
+              <th scope="col" class="text-center">Blogposts</th>
+            </tr>
+          </thead>
+          <tbody>
+          {{ range $index, $value := .Data.Terms.Alphabetical }}
+            <tr>
+              <td class="text-left">
+                <a class="text-dark" href="{{ $value.Name | urlize }}">
+                  {{ $value.Name }}
+                </a>
+              </td>
+              <td class="text-center">{{ $value.Count }}</td>
+            </tr>
+          {{ end }}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
