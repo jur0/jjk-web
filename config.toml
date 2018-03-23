@@ -5,6 +5,8 @@ languageCode = "en-us"
 title = "JJK Crypto Assets"
 paginate = 2
 
+# Generate robots.txt (by default it allows to crawl everything).
+enableRobotsTXT = true
 
 [params]
     debug = true
