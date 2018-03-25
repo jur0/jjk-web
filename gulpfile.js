@@ -5,7 +5,10 @@ var gulp         = require("gulp"),
     del          = require("del"),
     cssMinifier  = require("gulp-cssnano"),
     htmlMinifier = require("gulp-htmlmin"),
-    imgMinifier  = require("gulp-imagemin")
+    imgMinifier  = require("gulp-imagemin"),
+    jsMinifier   = require("gulp-uglify")
+    // pump is required by `gulp-uglify`. TODO
+    //pump         = require("pump")
 
 gulp.task("clean", function() {
     // Delete files synchronically so there are no errors while copying files.
@@ -42,6 +45,7 @@ gulp.task("js-bs", function () {
 // Copy javascript files.
 gulp.task("js", function() {
     gulp.src("src/js/**/*", { base: "src/js" })
+        .pipe(jsMinifier())
         .pipe(hash())
         .pipe(gulp.dest("static/js"))
         .pipe(hash.manifest("hash.json"))
