@@ -1,14 +1,5 @@
-{{ $js := .Site.Data.sri.js }}
-{{ if not .Site.Params.disable_sri }}
-  {{ printf "<script src=\"https://code.jquery.com/jquery-%s.slim.min.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.jQuery.version $js.jQuery.sri | safeHTML }}
-  {{ printf "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/%s/umd/popper.min.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.popper.version $js.popper.sri | safeHTML }}
-  {{ printf "<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/%s/js/bootstrap.min.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $js.bootstrap.version $js.bootstrap.sri | safeHTML }}
-
-{{ else }}
-  <script src="//code.jquery.com/jquery-{{- $js.jQuery.version -}}.slim.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/{{- $js.popper.version -}}/umd/popper.min.js"></script>
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/{{- $js.bootstrap.version -}}/js/bootstrap.min.js"></script>
-{{ end }}
-{{ range .Site.Params.custom_js }}
-  <script src="{{ "/js/" | relURL }}{{ . }}"></script>
-{{ end }}
+{{ $js_hash_map := .Site.Data.static.js.hash }}
+{{ $jquery_js := print "js/" (index $js_hash_map "jquery.min.js") }}
+{{ $bootstrap_bundle_js := print "js/" (index $js_hash_map "bootstrap.bundle.min.js") }}
+<script src="{{ $jquery_js | relURL }}"></script>
+<script src="{{ $bootstrap_bundle_js | relURL }}"></script>
