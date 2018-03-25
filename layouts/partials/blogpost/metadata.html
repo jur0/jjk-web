@@ -1,4 +1,5 @@
 {{ $blogpost := .blogpost }}
+{{ $author := .Site.Author.name }}
 {{ $params := $blogpost.Params }}
 {{ $site_params := $blogpost.Site.Params }}
 
@@ -13,7 +14,7 @@
   </time>
 </span>
 <span itemscope itemprop="author publisher" itemtype="http://schema.org/Person">
-  <meta itemprop="name" content="{{ $site_params.author }}">
+  <meta itemprop="name" content="{{ $author }}">
 </span>
 {{ if ne $site_params.reading_time false }}
 <span>&middot;</span>

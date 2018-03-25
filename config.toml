@@ -8,15 +8,17 @@ paginate = 2
 # Generate robots.txt (by default it allows to crawl everything).
 enableRobotsTXT = true
 
+[author]
+    name = "JJK Crypto Assets"
+    email = "info@jjkcryptoassets.com"
+
 [params]
     debug = true
 
     date_format = "January 2, 2006"
     time_format = "15:04"
 
-    author = "JJK Crypto Assets"
     description = "Diversified and actively managed portfolio of digital assets"
-
     copyright_year = 2018
 
 [[menu.main]]
