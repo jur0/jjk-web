@@ -4,6 +4,7 @@ sudo: required
 env:
     global:
         - HUGO_VERSION=0.37.1
+        # Use `gulp` command from node_modules.
         - PATH=$PATH:node_modules/.bin
 
 install:
@@ -21,7 +22,7 @@ deploy:
     skip-cleanup: true
     # Publish the directory `public`.
     local-dir: public
-    # Use the github token stored in the travis environment
+    # Use the github token stored in the travis environment.
     github_token: $GITHUB_TOKEN
     on:
         branch: travis
