@@ -1,7 +1,7 @@
 {
   "name": "jjk-static-assets",
   "version": "0.2.0",
-  "description": "",
+  "description": "Tasks for managing static files.",
   "main": "index.js",
   "scripts": {
     "gulp": "gulp"
@@ -24,6 +24,7 @@
     "gulp-autoprefixer": "^5.0.0",
     "gulp-hash": "^4.2.2",
     "gulp-htmlmin": "^4.0.0",
+    "gulp-imagemin": "^4.1.0",
     "gulp-sass": "^3.2.1",
     "jquery": "^1.9.1"
   }

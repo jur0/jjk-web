@@ -1,9 +1,10 @@
 var gulp         = require("gulp"),
     sass         = require("gulp-sass"),
     autoprefixer = require("gulp-autoprefixer"),
-    htmlMinifier = require("gulp-htmlmin"),
     hash         = require("gulp-hash"),
-    del          = require("del")
+    del          = require("del"),
+    htmlMinifier = require("gulp-htmlmin"),
+    imgMinifier  = require("gulp-imagemin")
 
 gulp.task("clean", function() {
     // Delete files synchronically so there are no errors while copying files.
@@ -48,9 +49,19 @@ gulp.task("js", function() {
 })
 
 // Images.
-// TODO: Image minify
 gulp.task("img", function () {
     gulp.src("src/img/**/*", { base: "src/img/" })
+        .pipe(imgMinifier([
+            imgMinifier.gifsicle({ interlaced: true }),
+            imgMinifier.jpegtran({ progressive: true }),
+            imgMinifier.optipng({ optimizationLevel: 5 }),
+            imgMinifier.svgo({
+                plugins: [
+                    { removeViewBox: true },
+                    { cleanupIDs: false }
+                ]
+            })
+        ]))
         .pipe(hash())
         .pipe(gulp.dest("static/img"))
         .pipe(hash.manifest("hash.json"))
