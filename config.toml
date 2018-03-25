@@ -3,7 +3,7 @@ baseURL = "https://jur0.github.io/jjk-web/"
 
 languageCode = "en-us"
 title = "JJK Crypto Assets"
-paginate = 2
+paginate = 5
 
 # Generate robots.txt (by default it allows to crawl everything).
 enableRobotsTXT = true
