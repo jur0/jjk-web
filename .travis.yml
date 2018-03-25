@@ -13,7 +13,7 @@ install:
 
 script:
     - gulp build-static
-    - hugo
+    - hugo -v
     - gulp hugo-html-minify
 
 deploy:
