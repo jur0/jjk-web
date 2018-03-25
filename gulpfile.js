@@ -63,7 +63,15 @@ gulp.task("build-static", ["clean", "scss-bs", "js-bs", "js", "img"])
 
 gulp.task("hugo-html-minify", function () {
     gulp.src("public/**/*.html", { base: "public/" })
-        .pipe(htmlMinifier({ collapseWhitespace: true }))
+        .pipe(htmlMinifier({
+            collapseWhitespace: true,
+            removeComments: true,
+            removeCommentsFromCDATA: true,
+            removeRedundantAttributes: true,
+            removeEmptyAttributes: true,
+            removeOptionalTags: true,
+            removeEmptyElements: true
+        }))
         .pipe(gulp.dest("public/"))
 })
 
