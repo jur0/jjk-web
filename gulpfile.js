@@ -3,6 +3,7 @@ var gulp         = require("gulp"),
     autoprefixer = require("gulp-autoprefixer"),
     hash         = require("gulp-hash"),
     del          = require("del"),
+    cssMinifier  = require("gulp-cssnano"),
     htmlMinifier = require("gulp-htmlmin"),
     imgMinifier  = require("gulp-imagemin")
 
@@ -14,12 +15,11 @@ gulp.task("clean", function() {
 // Compile boostrap scss.
 gulp.task("scss-bs", function () {
     gulp.src("src/scss/bootstrap.scss", { base: "src/scss/" })
-        .pipe(sass({
-            outputStyle : "compressed"
-        }))
+        .pipe(sass())
         .pipe(autoprefixer({
             browsers : ["last 10 versions"]
         }))
+        .pipe(cssMinifier())
         .pipe(hash())
         .pipe(gulp.dest("static/css"))
         // Create a hash map (manifest) and put it into data directory so
