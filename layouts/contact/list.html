@@ -9,20 +9,33 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-xs-12 col-md-8">
-        <form>
+        <form class="needs-validation" novalidate>
           <div class="row">
             <div class="col-xs-12 col-md-6 form-group">
-              <input type="text" class="form-control" placeholder="Name">
+              <input type="text" class="form-control" placeholder="Name" required>
+              <div class="invalid-feedback">
+                Name is required!
+              </div>
             </div>
             <div class="col-xs-12 col-md-6 form-group">
-              <input type="email" class="form-control" placeholder="Email">
+              <input type="email" class="form-control" placeholder="Email" required>
+              <div class="invalid-feedback">
+                Email is required!
+              </div>
             </div>
           </div>
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Subject">
+            <input type="text" class="form-control" placeholder="Subject" required>
+            <div class="invalid-feedback">
+              Subject is required!
+            </div>
           </div>
           <div class="form-group">
-            <textarea class="form-control" rows="4" placeholder="Message"></textarea>
+            <textarea class="form-control" rows="4" placeholder="Message" required>
+            </textarea>
+            <div class="invalid-feedback">
+              Message is required!
+            </div>
           </div>
           <p class="text-center">
             <button type="submit" class="btn btn-light btn-outline">Send</button>

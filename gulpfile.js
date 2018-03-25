@@ -38,6 +38,15 @@ gulp.task("js-bs", function () {
         .pipe(gulp.dest("data/static/js"))
 })
 
+// Copy javascript files.
+gulp.task("js", function() {
+    gulp.src("src/js/**/*", { base: "src/js" })
+        .pipe(hash())
+        .pipe(gulp.dest("static/js"))
+        .pipe(hash.manifest("hash.json"))
+        .pipe(gulp.dest("data/static/js"))
+})
+
 // Images.
 // TODO: Image minify
 gulp.task("img", function () {
@@ -48,7 +57,7 @@ gulp.task("img", function () {
         .pipe(gulp.dest("data/static/img"))
 })
 
-gulp.task("build-static", ["clean", "scss-bs", "js-bs", "img"])
+gulp.task("build-static", ["clean", "scss-bs", "js-bs", "js", "img"])
 
 // Post hugo generation tasks
 
