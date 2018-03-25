@@ -1,5 +1,6 @@
 public/
 static/
 node_modules/
+data/
 
 .zshrc.local
