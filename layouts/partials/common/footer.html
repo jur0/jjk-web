@@ -5,6 +5,27 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-xs-12 col-md-8">
+        <ul class="nav justify-content-center">
+          <li class="nav-item">
+            <a class="nav-link" href={{ "/" | relURL }}>
+              <span>Home</span>
+            </a>
+          </li>
+          {{ range .Site.Menus.main }}
+          {{/* Set target for link. */}}
+          {{ $.Scratch.Set "target" "" }}
+          {{ if gt (len .URL) 4 }}
+            {{ if eq "http" (slicestr .URL 0 4) }}
+              {{ $.Scratch.Set "target" " target=\"_blank\" rel=\"noopener\"" }}
+            {{ end }}
+          {{ end }}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ .URL }}"{{ if $.IsHome }} data-target="{{ .URL }}"{{ end }} {{ ($.Scratch.Get "target") | safeHTMLAttr }}>
+              <span>{{ .Name }}</span>
+            </a>
+          </li>
+          {{ end }}
+        </ul>
         <p class="text-center">&copy; {{ $copyright_year }} {{ $author }} - All rights reserved.</p>
       </div>
     </div>
