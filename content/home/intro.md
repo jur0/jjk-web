@@ -2,11 +2,8 @@
 date = 2018-03-16T09:40:30+01:00
 draft = false
 
-title = "JJK Crypto Assets"
+title = "Actively managed portfolio of crypto assets"
 
-[button]
-  label = "Check JJK on ICONOMI website"
-  url = "https://www.iconomi.net/dashboard/#/daa/JJK"
+subtitle = "Let JJK Crypto Assets be your gateway for cryptocurrency investing"
 +++
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
