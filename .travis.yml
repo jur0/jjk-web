@@ -25,4 +25,4 @@ deploy:
     # Use the github token stored in the travis environment.
     github_token: $GITHUB_TOKEN
     on:
-        branch: travis
+        branch: master
