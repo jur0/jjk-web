@@ -19,7 +19,6 @@ enableRobotsTXT = true
     time_format = "15:04"
 
     description = "Diversified and actively managed portfolio of digital assets"
-    copyright_year = 2018
 
 [[menu.main]]
     name = "Blog"
