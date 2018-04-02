@@ -1,18 +1,17 @@
 +++
-widget = "team"
-title = "Team"
 date = 2018-03-16T12:24:06+01:00
-active = true
-weight = 20
+draft = false
+
+title = "Team"
 
 [[team.members]]
     name = "Juraj Bilik"
     title = "Financial Analyst"
     description = """\
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit,\
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris \
-      nisi ut aliquip ex ea commodo consequat.\
+      Juraj has seven years of experience in the asset management department \
+      of a large reinsurance company. He has been responsible for investment \
+      analysis and reporting at the rates trading desk - risk, exposure, and \
+      position reports. \
       """
     avatar = "juraj-bilik.jpg"
     github = ""
@@ -24,10 +23,9 @@ weight = 20
     name = "Juraj Hlista"
     title = "Software Engineer"
     description = """\
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit,\
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris \
-      nisi ut aliquip ex ea commodo consequat.\
+      Juraj has been working in software engineering for six years. His \
+      interests are blockchain technology, innovation in this field, and \
+      fundamental analysis of crypto assets. \
       """
     avatar = "juraj-hlista.jpg"
     github = ""
@@ -39,10 +37,9 @@ weight = 20
     name = "Karol Skocik"
     title = "Software Engineer"
     description = """\
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit,\
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris \
-      nisi ut aliquip ex ea commodo consequat.\
+      Karol is a technology-oriented member of the team with fifteen years \
+      of software development experience. He constantly scans the crypto \
+      scene for undervalued assets with high growth potential. \
       """
     avatar = "karol-skocik.jpg"
     github = ""
