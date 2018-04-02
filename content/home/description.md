@@ -1,9 +1,14 @@
 +++
-widget = "description"
-title = "Description"
 date = 2018-03-16T11:56:57+01:00
-active = true
-weight = 10
+draft = false
+
+title = "Description"
 +++
 
-Lorem ipsum **dolor sit amet, consectetur adipiscing** elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea **commodo consequat**. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, **sunt in culpa qui officia deserunt** mollit anim id est laborum.
+JJK Crypto Assets is a **diversified and actively managed portfolio** of digital
+assets on **ICONOMI platform**. The platform makes it easy to create **Digital
+Asset Arrays** (DAA) which are managed by portfolio managers such as JJK.
+
+Investors can pick which DAAs to invest into based on the perfomance, DAA
+structure, etc. JJK offers a DAA composed of **undervalued, high-quality
+digital assets with high potential of growth**.
