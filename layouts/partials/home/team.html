@@ -14,8 +14,8 @@
             <img class="img-fluid w-25 rounded-circle align-self-center mr-4" src="{{ $avatar | relURL }}" alt="{{ .name }}">
             <meta itemprop="image" content="{{ $avatar | relURL }}">
             <div class="media-body">
-              <h2 class="mt-0 mb-0" itemprop="name"><small>{{ .name }}</small></h2>
-              <h3 class="text-muted mt-0 mb-0" itemprop="jobTitle"><small>{{ .title }}</small></h3>
+              <h2 class="mt-0 mb-0" itemprop="name">{{ .name }}</h2>
+              <h3 class="text-muted mt-0 mb-0" itemprop="jobTitle">{{ .title }}</h3>
               <p itemprop="description">{{ .description }}</p>
             </div>
           </li>

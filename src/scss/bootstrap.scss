@@ -1,9 +1,33 @@
-// Required
+$font-size-base: 1.05rem;
+
+$link-hover-decoration: none;
+
+#home-intro h1 {
+    font-size: $font-size-base * 1.8;
+}
+
+#home-intro h2 {
+    font-size: $font-size-base * 1.5;
+}
+
+#home-description p {
+    font-size: $font-size-base * 1.15;
+}
+
+#home-team h2 {
+    font-size: $font-size-base * 1.15;
+}
+
+#home-team h3 {
+    font-size: $font-size-base * 1.05;
+}
+
+// Required.
 @import "node_modules/bootstrap/scss/functions";
 @import "node_modules/bootstrap/scss/variables";
 @import "node_modules/bootstrap/scss/mixins";
 
-// Optional
+// Optional.
 @import "node_modules/bootstrap/scss/badge";
 @import "node_modules/bootstrap/scss/buttons";
 @import "node_modules/bootstrap/scss/card";
@@ -21,4 +45,3 @@
 @import "node_modules/bootstrap/scss/transitions";
 @import "node_modules/bootstrap/scss/type";
 @import "node_modules/bootstrap/scss/utilities";
-
