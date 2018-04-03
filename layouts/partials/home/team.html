@@ -2,10 +2,10 @@
 {{ $img_hash_map := .Site.Data.static.img.hash }}
 
 <section id="home-team">
-  <div class="container">
+  <div class="container mb-5">
     <div class="row justify-content-center">
       <div class="col-xs-12 col-md-8 col-lg-6">
-        <h1 class="text-center mb-5">{{ .Title }}</h1>
+        <h1 class="text-center mb-4">{{ .Title }}</h1>
         <ul class="list-unstyled">
         {{ range $members }}
         {{ $img_key := print "team-member/" .avatar }}
