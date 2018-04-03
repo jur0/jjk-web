@@ -1,3 +1,11 @@
+body {
+  min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
 $font-size-base: 1.05rem;
 
 $link-hover-decoration: none;
