@@ -30,6 +30,30 @@ $link-hover-decoration: none;
     font-size: $font-size-base * 1.05;
 }
 
+$base-900: #283A41;
+$base-700: #364E57;
+$base-500: #44626D;
+$base-300: #69818A;
+$base-100: #8EA0A7;
+$base-0:   #F1F3F4;
+
+$theme-colors: (
+    "base-900": $base-900,
+    "base-700": $base-700,
+    "base-500": $base-500,
+    "base-300": $base-300,
+    "base-100": $base-100,
+    "base-0":   $base-0
+);
+
+$body-color: $base-700;
+
+$navbar-light-color:                rgba($base-900, .65);
+$navbar-light-hover-color:          rgba($base-900, .8);
+$navbar-light-active-color:         rgba($base-900, 1);
+$navbar-light-disabled-color:       rgba($base-900, .5);
+$navbar-light-toggler-border-color: rgba($base-900, .3);
+
 // Required.
 @import "node_modules/bootstrap/scss/functions";
 @import "node_modules/bootstrap/scss/variables";

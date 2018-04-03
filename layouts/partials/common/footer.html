@@ -1,14 +1,14 @@
 {{ $copyright_year := .Site.Params.copyright_year }}
 {{ $author := .Site.Author.name }}
 
-<footer class="bg-light">
+<footer class="bg-base-100">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-xs-12 col-md-8">
         <ul class="nav justify-content-center">
           <li class="nav-item">
             <a class="nav-link" href={{ "/" | relURL }}>
-              <span>Home</span>
+              <span class="h6 text-base-900">Home</span>
             </a>
           </li>
           {{ range .Site.Menus.main }}
@@ -21,7 +21,7 @@
           {{ end }}
           <li class="nav-item">
             <a class="nav-link" href="{{ .URL }}"{{ if $.IsHome }} data-target="{{ .URL }}"{{ end }} {{ ($.Scratch.Get "target") | safeHTMLAttr }}>
-              <span>{{ .Name }}</span>
+              <span class="h6 text-base-900">{{ .Name }}</span>
             </a>
           </li>
           {{ end }}

@@ -1,7 +1,7 @@
-<div id="page-navigation" class="container-fluid sticky-top bg-light">
+<div id="page-navigation" class="container-fluid sticky-top bg-base-0">
   <div class="row justify-content-center">
     <div class="col-xs-12 col-md-8">
-      <nav class="navbar navbar-expand-md navbar-light bg-light">
+      <nav class="navbar navbar-expand-md navbar-light bg-base-0">
         <a class="navbar-brand" href="{{ "/" | relURL }}">
           {{- if .Site.Params.logo -}}
           <img src="{{ printf "/img/%s" .Site.Params.logo | relURL }}" alt="{{ .Site.Title }}">
@@ -21,14 +21,14 @@
               <li class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   {{ .Pre }}
-                  <span>{{ .Name }}</span>
+                  <span class="h6">{{ .Name }}</span>
                   {{ .Post }}
                 </a>
                 <div class="dropdown-menu">
                   {{ range .Children }}
                     <a class="dropdown-item" href="{{ .URL }}"{{ if $.IsHome }} data-target="{{ .URL }}"{{ end }}>
                       {{ .Pre }}
-                      <span>{{ .Name }}</span>
+                      <span class="h6">{{ .Name }}</span>
                       {{ .Post }}
                     </a>
                   {{ end }}
@@ -45,7 +45,7 @@
                 <li class="nav-item">
                   <a class="nav-link" href="{{ .URL }}"{{ if $.IsHome }} data-target="{{ .URL }}"{{ end }} {{ ($.Scratch.Get "target") | safeHTMLAttr }}>
                     {{ .Pre }}
-                    <span>{{ .Name }}</span>
+                    <span class="h6">{{ .Name }}</span>
                     {{ .Post }}
                   </a>
                 </li>
