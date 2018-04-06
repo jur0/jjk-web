@@ -1,5 +1,4 @@
 {{ $members := .Params.team.members }}
-{{ $img_hash_map := .Site.Data.static.img.hash }}
 
 <section id="home-team">
   <div class="container mb-5">
@@ -8,11 +7,10 @@
         <h1 class="text-center mb-4">{{ .Title }}</h1>
         <ul class="list-unstyled">
         {{ range $members }}
-        {{ $img_key := print "team-member/" .avatar }}
-        {{ $avatar := print "img/" (index $img_hash_map $img_key) }}
+        {{ $avatar := print "/img/team-member/" .avatar }}
           <li class="media mt-2 mb-2" itemprop="member" itemscope itemtype="http://schema.org/Person">
-            <img class="img-fluid w-25 rounded-circle align-self-center mr-4" src="{{ $avatar | relURL }}" alt="{{ .name }}">
-            <meta itemprop="image" content="{{ $avatar | relURL }}">
+            <img class="img-fluid w-25 rounded-circle align-self-center mr-4" src="{{ $avatar }}" alt="{{ .name }}">
+            <!-- <meta itemprop="image" content="{{ $avatar }}"> -->
             <div class="media-body">
               <h2 class="mt-0 mb-0" itemprop="name">{{ .name }}</h2>
               <h3 class="text-muted mt-0 mb-0" itemprop="jobTitle">{{ .title }}</h3>

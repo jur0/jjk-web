@@ -9,9 +9,7 @@
   {{ .Scratch.Set "description" .Summary }}
 {{ end }}
 <meta name="description" content="{{ .Scratch.Get "description" }}">
-{{ $css_hash_map := .Site.Data.static.css.hash }}
-{{ $bootstrap_css := print "css/" (index $css_hash_map "bootstrap.css") }}
-<link rel="stylesheet" href="{{ $bootstrap_css | relURL }}">
+<link rel="stylesheet" href="/css/style.css">
 {{ if or .Site.RSSLink .RSSLink }}
 <link rel="alternate" href="{{ .RSSLink | default .Site.RSSLink  }}" type="application/rss+xml" title="{{ .Site.Title }}">
 <link rel="feed" href="{{ .RSSLink | default .Site.RSSLink }}" type="application/rss+xml" title="{{ .Site.Title }}">

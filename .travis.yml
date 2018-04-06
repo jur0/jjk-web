@@ -13,15 +13,13 @@ install:
     - npm install
 
 script:
-    - gulp build-static
-    - hugo -v
-    - gulp hugo-html-minify
+    - npm run prod
 
 deploy:
     provider: pages
     skip-cleanup: true
     # Publish the directory `public`.
-    local-dir: public
+    local-dir: dist
     # Use the github token stored in the travis environment.
     github_token: $GITHUB_TOKEN
     on:

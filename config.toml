@@ -1,5 +1,4 @@
-# Must end with '/'
-baseURL = "https://jur0.github.io/jjk-web/"
+# Base URL is set in package.json.
 
 languageCode = "en-us"
 title = "JJK Crypto Assets"

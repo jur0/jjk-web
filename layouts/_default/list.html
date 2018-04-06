@@ -1,8 +1,0 @@
-{{ define "template" }}
-	{{ $context := dict "Which" .Kind "Template" "layouts/_default/list.html" }}
-  {{ partial "show-template" $context }}
-{{ end }}
-
-{{ define "main" }}
-<h1>default list</h1>
-{{ end }}
