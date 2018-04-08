@@ -10,6 +10,7 @@ env:
 install:
     - wget -O /tmp/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.deb
     - sudo dpkg -i /tmp/hugo.deb
+    - sudo apt-get install -y autoconf libtool pkg-config nasm build-essential
     - npm install
 
 script:
