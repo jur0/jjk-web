@@ -102,7 +102,7 @@ module.exports = {
             use: [{
                 loader: 'spawn-loader',
                 options: {
-                    name: 'js/[name].[hash:4].js'
+                    name: 'js/[name].min.[hash:8].js'
                 }
             }]
         },
@@ -111,7 +111,7 @@ module.exports = {
             use: [{
                 loader: 'file-loader',
                 options: {
-                    name: '[path][name].[hash:4].[ext]'
+                    name: '[path][name].min.[hash:8].css'
                 }
             }]
         },
@@ -120,7 +120,7 @@ module.exports = {
             use: [{
                 loader: 'file-loader',
                 options: {
-                    name: '[path][name].[hash:4].[ext]'
+                    name: '[path][name].[hash:8].[ext]'
                 }
             }]
         },
@@ -129,7 +129,7 @@ module.exports = {
             use: {
                 loader: 'file-loader',
                 options: {
-                    name: '[path][name].[hash:4].[ext]'
+                    name: '[path][name].[hash:8].[ext]'
                 }
             }
         }]
@@ -139,14 +139,16 @@ module.exports = {
 	    new CleanPlugin([distDir], { root: rootDir }),
 	    new SuppressChunksPlugin(Object.keys(htmlEntries)),
 	    // Copy what hasn't been processed by loaders yet (xml, txt, ...).
-	    new CopyPlugin([{ from: '**/*' }], {
-            ignore: [ // Ignore assets processed by loaders above.
+	    new CopyPlugin([{
+	        from: '**/*',
+            // Ignore assets processed by loaders above.
+            ignore: [
                 '*.html',
-                '*.{js}',
-                '*.{css}',
+                '*.js',
+                '*.css',
                 '*.{png,ico,gif,svg,jpeg,jpg}',
                 '*.{woff,woff2,eot,ttf,otf}'
-            ]}
-        )
+            ]
+        }])
 	].concat(htmlEntriesPlugins(htmlEntries))
 };
